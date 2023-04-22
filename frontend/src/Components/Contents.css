@@ -1,0 +1,193 @@
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    height: 10vh;
+    overflow: scroll;
+}
+
+.from-box {
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.glass {
+    width: 100%;
+    max-width: 600px;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.1);
+    /* 背景色 */
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    /* ボーダー */
+    border-right-color: rgba(255, 255, 255, 0.2);
+    border-bottom-color: rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    -webkit-backdrop-filter: blur(20px);
+    /* ぼかしエフェクト */
+    backdrop-filter: blur(20px);
+    /* box-shadow: 0 5px 20px rgba(255, 152, 79, 0.5); */
+    /* 薄い影 */
+}
+
+.send-button {
+    background: #ffffff;
+    width: 100%;
+    margin-top: 30px;
+    border: none;
+    border-radius: 5px;
+    color: rgb(0, 0, 0);
+    padding: 10px 30px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.card {
+    max-width: 600px;
+    border: 1px solid #ffffff;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.cards {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-body {
+    padding-top: auto;
+    overflow-y: scroll;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.acd-check {
+    display: none;
+}
+
+.acd-label {
+    padding-left: 50px;
+    background: #333;
+    color: #fff;
+    display: block;
+    margin-bottom: 1px;
+    padding: 10px;
+}
+
+.acd-content {
+    height: 0;
+    opacity: 0;
+    padding: 0 10px;
+    transition: .5s;
+    visibility: hidden;
+}
+
+.acd-content {}
+
+.acd-check:checked+.acd-label+.acd-content {
+    height: auto;
+    opacity: 1;
+    padding: 10px;
+    visibility: visible;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.homessage {
+    z-index: 2;
+    width: 80%;
+    padding: 1em;
+    background: ivory;
+    border-radius: 1em;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    /*外枠の線*/
+    border: solid 5px rgb(155, 204, 204);
+    position: relative;
+}
+
+.note-box {
+    /*ドットの設定*/
+    content: "";
+    padding: 2em 4em;
+    border-left: dotted 20px rgb(221, 221, 221);
+    /*ドットの大きさ、高さ*/
+    height: auto;
+
+}
+
+.homessage p {
+    color: black;
+    font-size: 3em;
+
+    background-image: linear-gradient(#ccc 1.3px, transparent 1.3px);
+    background-size: 100% 1.2em;
+    line-height: 1.2em;
+    padding-bottom: 5px;
+
+}
+
+.homessage-button {
+    padding-top: 30px;
+    background-color: transparent;
+    font-size: 2em;
+    left: 50%;
+
+    border: solid 5px rgb(155, 204, 204);
+}
+
+ul.checkmark li {
+    display: block;
+    margin-top: -80px;
+    margin-left: -20%;
+    font-size: 100px;
+    list-style-type: none;
+    padding: auto;
+    position: relative;
+
+}
+
+ul.checkmark li:before {
+    content: " ";
+    border: solid 0.8em rgb(155, 204, 204);
+    border-radius: .8em;
+    height: 0;
+    width: 0;
+    position: absolute;
+    left: 50%;
+    top: auto;
+    margin-top: -0.5em;
+}
+
+ul.checkmark li:after {
+    content: " ";
+    width: 0.4em;
+    height: 0.8em;
+    border: solid white;
+    border-width: 0 0.2em 0.2em 0;
+    position: absolute;
+    left: 50%;
+    top: auto;
+    margin-top: -0.2em;
+    margin-left: 0.6em;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
