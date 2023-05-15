@@ -1,4 +1,4 @@
-from django.contrib.auth import authenticate
+'''from django.contrib.auth import authenticate
 from rest_framework import serializers
 
 class LoginSerializer(serializers.Serializer):
@@ -14,4 +14,4 @@ class LoginSerializer(serializers.Serializer):
                 raise serializers.ValidationError('ログインが失敗しました')
             attrs['user'] = user
         return attrs
-    
+'''

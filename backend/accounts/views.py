@@ -1,4 +1,5 @@
-from django.contrib.auth import login, logout
+from django.shortcuts import render
+'''from django.contrib.auth import login, logout
 from rest_framework import generics, views
 from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
@@ -22,4 +23,4 @@ class LogoutView(views.APIView):
 
     def post(self, request, *arg, **kwargs):
         logout(request)
-        return Response({'detail': "ログアウトが成功しました"})
+        return Response({'detail': "ログアウトが成功しました"})'''

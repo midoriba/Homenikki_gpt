@@ -1,5 +1,7 @@
 from rest_framework import serializers
 from DiaryPost.models import DiaryModel
+from .home_generator import HomeGenerator
+import os
 #from .libary.recognize import Recognizer
 
 class DiarySerializer(serializers.ModelSerializer):
@@ -11,7 +13,8 @@ class DiarySerializer(serializers.ModelSerializer):
         # 日記から褒め文を生成
         #r = Recognizer()
         #l = r.fill_template(r.recognize(data['summary']))
-        data['praise'] = "ここに褒め文"
+        hg = HomeGenerator()
+        data['praise'] = hg.generate(data['summary'] + data['detail'])
         user = self.context['request'].user
         data['author'] = user
         return data
