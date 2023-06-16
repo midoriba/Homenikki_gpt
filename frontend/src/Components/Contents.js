@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom'
 import './Contents.css';
 
 function Contents() {
+  const [username, setUsername] = useState('')
   const [items, setItems] = useState([])
   const [showMessage, setShowMessage] = useState(false)
   const [referedPost, setReferedPost] = useState({
@@ -14,15 +15,20 @@ function Contents() {
   const [cookies] = useCookies()
   const navigate = useNavigate()
   useEffect(() => {
+    axios.get('http://127.0.0.1:8000/api/auth/users/me', { headers: {Authorization: `JWT ${cookies.accesstoken}`} })
+    .then(res => {
+      setUsername(res.data.username)
+    })
+  }, [])
+  useEffect(() => {
     axios.post('http://127.0.0.1:8000/api/auth/jwt/verify', {
       token: cookies.accesstoken,
-    }).then(res => {
+    }).then(() => {
       console.log("ログイン済み");
     })
       .catch(err => {
         if (err.response.status === 401) {
           navigate('/signin')
-          console.log("ログイン必要")
         }
       })
   })
@@ -35,9 +41,17 @@ function Contents() {
   const messagewindow = showMessage ? (<Homessage praise={referedPost.praise} setShowMessage={setShowMessage} />) : null
   return (
     <div>
+      <header className="App-header">
+        <h1 className="text-white display-4">{username}さんのほめ日記</h1>
+        <hr />
+        <p className="m-0 text-white">しゃべってほめてくれる日記帳</p>
+      </header>
       <PostForm setReferedPost={setReferedPost} setShowMessage={setShowMessage} />
       <DiaryList data={items} />
       {messagewindow}
+      <footer className="App-footer">
+        <h1 className="text-white h4">ほめ日記</h1>
+      </footer>
     </div>
   )
 }

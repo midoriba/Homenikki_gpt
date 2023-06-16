@@ -8,5 +8,6 @@ defaultRouter.register('diary', DiaryViewSet, basename='diary')
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(defaultRouter.urls)),
+    path('api/auth/',include('djoser.urls')),
     path('api/auth/',include('djoser.urls.jwt')),
 ]
