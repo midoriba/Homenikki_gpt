@@ -11,8 +11,6 @@ class DiarySerializer(serializers.ModelSerializer):
         read_only_fields = ('id', 'praise', 'date_created', 'dat_modified')
     def validate(self, data):
         # 日記から褒め文を生成
-        #r = Recognizer()
-        #l = r.fill_template(r.recognize(data['summary']))
         hg = HomeGenerator()
         data['praise'] = hg.generate(data['summary'] + data['detail'])
         user = self.context['request'].user
