@@ -16,7 +16,6 @@ function DefaultPage() {
           <Route path={`/`} element={<Entrance />} />
           <Route path={`/signin`} element={<Signin />} />
           <Route path={`/signup`} element={<Signup />} />
-          <Route path={`*`} element={<NotFound />} />
         </Routes>
         <footer className="App-footer">
             <h1 className="text-white h4">ほめ日記</h1>
