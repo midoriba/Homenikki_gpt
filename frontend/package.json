@@ -16,7 +16,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && rm -r ../backend/static/* && mv build/index.html ../backend/templates/ && mv build/static/* ../backend/static/ && rm -r build/static && mv build/* ../backend/static/",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
