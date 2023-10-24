@@ -11,7 +11,13 @@
 
 ## 実行方法
 
-```
+```bash
+#初期設定
 docker compose up -d
 docker compose exec api bash
+./scripts/setup.sh
+python manage.py createsuperuser
+# Eメールアドレス入力
+# パスワード入力
 ```
+http://localhost:8000/ にアクセス
