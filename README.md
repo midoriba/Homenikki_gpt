@@ -9,8 +9,15 @@
 - バックエンド：Django REST Framework
 - 文生成：ChatGPT
 
-## 実行方法
+### 実行方法
 
+#### OpenAI API キーの設定
+```
+export OPENAI_API_KEY="xxx"
+```
+`"xxx"`には[OpenAI](https://openai.com/blog/openai-api)のウェブサイトから取得したAPIキーを入力。
+
+#### dockerコンテナを起動
 ```bash
 #初期設定
 docker compose up -d
